@@ -81,6 +81,7 @@ public class controladorJugador implements ActionListener,MouseListener{
                 this.vista.txtApellido.setText( String.valueOf( this.vista.tablaJugadores.getValueAt(fila, 2) ));
                 this.vista.txtNacionalidad.setText( String.valueOf( this.vista.tablaJugadores.getValueAt(fila, 3) ));
                 this.vista.txtAnio.setText( String.valueOf( this.vista.tablaJugadores.getValueAt(fila, 4) ));
+                this.vista.txtNifichaje.setText( String.valueOf( this.vista.tablaJugadores.getValueAt(fila, 0) ));
              }
         }
     }
