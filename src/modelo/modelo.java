@@ -109,7 +109,8 @@ public class modelo extends database{
      * @return 
      */
     public boolean Janiadirjugador(String id, String nombre , String apellido, String nacionalidad, int fecha){
-        //Se arma la consulta
+        if (valifarDNI(id)){
+          //Se arma la consulta
         String q=" INSERT INTO Jugadores ( nif , nombre , apellidos, nacionalidad , anio_nacimiento  ) "
                 + "VALUES ( '" + id + "','" + nombre + "','" + apellido + "','"+ nacionalidad +"','" + fecha + "' )";
         //se ejecuta la consulta
@@ -121,8 +122,11 @@ public class modelo extends database{
         }catch(SQLException e){
             System.err.println( e.getMessage() );
         }
-        return false;   
+        return false;  
         }
+        return false;
+         
+    }        
     
     /**
      * Método que nos permite Crear nuevo Fichajes
@@ -314,6 +318,15 @@ public class modelo extends database{
             System.err.println( e.getMessage() );
         }
         return tablemodel;
+    }
+    
+    /**
+     * Método que nos permite verificar si el DNI esta bien formado siguiendo el patron de 8 numeros y una letra
+     * @param id
+     * @return 
+     */
+    public boolean valifarDNI(String id){
+        return id.matches("^[0-9]{8}[T|R|W|A|G|M|Y|F|P|D|X|B|N|J|Z|S|Q|V|H|L|C|K|E]$");
     }
    
 }

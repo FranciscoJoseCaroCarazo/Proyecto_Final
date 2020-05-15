@@ -130,7 +130,6 @@ public class controladorEquipos implements ActionListener,MouseListener{
                   
         }
     }
-    
     public boolean validardatosEquipos(){
         return this.vista.txtNombre.getText().length() == 0  ||
                 this.vista.txtAnio.getText().length() == 0  ||

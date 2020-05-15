@@ -108,7 +108,6 @@ public class controladorJugador implements ActionListener,MouseListener{
                     this.vista.txtNacionalidad.getText(),
                     Integer.parseInt(this.vista.txtAnio.getText()) ))
                     this.vista.tablaJugadores.setModel( this.modelo.getJugadores() );
-                JOptionPane.showMessageDialog(vista,"Exito: Nuevo registro agregado.");
                 this.vista.txtNif.setText("");
                 this.vista.txtNombre.setText("") ;
                 this.vista.txtApellido.setText("");
