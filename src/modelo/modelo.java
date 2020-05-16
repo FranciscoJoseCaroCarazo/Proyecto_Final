@@ -146,7 +146,7 @@ public class modelo extends database{
             pstm.close();
             return true;
         }catch(SQLException e){
-            System.err.println( e.getMessage() );
+            
         }
         return false;
     }

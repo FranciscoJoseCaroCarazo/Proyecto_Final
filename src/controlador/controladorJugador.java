@@ -92,7 +92,7 @@ public class controladorJugador implements ActionListener,MouseListener{
 
     public void mouseEntered(MouseEvent e) {}
 
-    public void mouseExited(MouseEvent e) { }
+    public void mouseExited(MouseEvent e) {}
  
     //Control de eventos de los controles que tienen definido un "ActionCommand"
     public void actionPerformed(ActionEvent e) {
@@ -133,15 +133,22 @@ public class controladorJugador implements ActionListener,MouseListener{
                 this.vista.tablaJugadores.setModel( this.modelo.getJugadores() );
                 break;
             case nuevoFichaje:
-                if (!validardatosJugadores()){
+                if (!validardatosFichajes()){
                     if (this.modelo.Jnuevofichaje(
                     this.vista.txtNifichaje.getText() ,
                     this.vista.txtNombrefichaje.getText(),
-                    this.vista.txtTemporada.getText() ));
+                    this.vista.txtTemporada.getText() )){
+                        
+                    }else{
+                        JOptionPane.showMessageDialog(vista, "Ha habido un Error al hacer el Fichaje");
+                    }
+                
+                }else{
+                    JOptionPane.showMessageDialog(vista, "Ha habido un Error con los datos al hacer el Fichaje");
+                }
                 this.vista.txtNifichaje.setText("");
                 this.vista.txtNombrefichaje.setText("") ;
                 this.vista.txtTemporada.setText("");
-                }
                 break;
             case volver:
                  this.vista.dispose();
@@ -158,6 +165,13 @@ public class controladorJugador implements ActionListener,MouseListener{
                 this.vista.txtApellido.getText().length() == 0  ||
                 this.vista.txtNacionalidad.getText().length() == 0  ||
                 this.vista.txtAnio.getText().length() == 0;
+    }
+    
+    public boolean validardatosFichajes(){
+        return (this.vista.txtNifichaje.getText().length()) == 0 ||
+                (this.vista.txtNombrefichaje.getText().length()) == 0 ||
+                (this.vista.txtTemporada.getText().length()) == 0;
+            
     }
     
     
