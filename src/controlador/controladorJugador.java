@@ -133,13 +133,15 @@ public class controladorJugador implements ActionListener,MouseListener{
                 this.vista.tablaJugadores.setModel( this.modelo.getJugadores() );
                 break;
             case nuevoFichaje:
-                if (this.modelo.Jnuevofichaje(
+                if (!validardatosJugadores()){
+                    if (this.modelo.Jnuevofichaje(
                     this.vista.txtNifichaje.getText() ,
                     this.vista.txtNombrefichaje.getText(),
                     this.vista.txtTemporada.getText() ));
                 this.vista.txtNifichaje.setText("");
                 this.vista.txtNombrefichaje.setText("") ;
                 this.vista.txtTemporada.setText("");
+                }
                 break;
             case volver:
                  this.vista.dispose();
