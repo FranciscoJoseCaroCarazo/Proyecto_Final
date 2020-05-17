@@ -3,8 +3,7 @@ import java.sql.*;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 /**
- * @web http://www.jc-mouse.net
- * @author Mouse
+ * @author Francisco José Caro Carazo
  */
 public class modelo extends database{
 

@@ -138,7 +138,7 @@ public class controladorJugador implements ActionListener,MouseListener{
                     this.vista.txtNifichaje.getText() ,
                     this.vista.txtNombrefichaje.getText(),
                     this.vista.txtTemporada.getText() )){
-                        
+                        JOptionPane.showMessageDialog(vista, "Fichaje añadido con exito");
                     }else{
                         JOptionPane.showMessageDialog(vista, "Ha habido un Error al hacer el Fichaje");
                     }
@@ -159,6 +159,10 @@ public class controladorJugador implements ActionListener,MouseListener{
     
     }
     
+    /**
+     * Método que se asegura de que los campos de teo no estan vacios
+     * @return 
+     */
     public boolean validardatosJugadores(){
         return this.vista.txtNif.getText().length() == 0  ||
                 this.vista.txtNombre.getText().length() == 0  ||
@@ -167,6 +171,10 @@ public class controladorJugador implements ActionListener,MouseListener{
                 this.vista.txtAnio.getText().length() == 0;
     }
     
+    /**
+     * Método que se asegura de que los campos de teo no estan vacios
+     * @return 
+     */
     public boolean validardatosFichajes(){
         return (this.vista.txtNifichaje.getText().length()) == 0 ||
                 (this.vista.txtNombrefichaje.getText().length()) == 0 ||

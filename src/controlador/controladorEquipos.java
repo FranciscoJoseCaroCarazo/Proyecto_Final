@@ -102,9 +102,12 @@ public class controladorEquipos implements ActionListener,MouseListener{
                    if (this.modelo.Jnuevoequipo(
                     this.vista.txtNombre.getText() ,
                     Integer.parseInt(this.vista.txtAnio.getText()),
-                    this.vista.txtEstadio.getText() ));
+                    this.vista.txtEstadio.getText() )){
+                       JOptionPane.showMessageDialog(vista, "Nuevo equipo Introducido");
+                   }else{
+                       JOptionPane.showMessageDialog(vista, "Ha habido un Error al crear el nuevo equipo");
+                   }
                 this.vista.tablaEquipo.setModel( this.modelo.getEquipos() );
-                JOptionPane.showMessageDialog(vista,"Exito: Nuevo Equipo añadido.");
                 this.vista.txtNombre.setText("");
                 this.vista.txtAnio.setText("") ;
                 this.vista.txtEstadio.setText("");
@@ -130,6 +133,11 @@ public class controladorEquipos implements ActionListener,MouseListener{
                   
         }
     }
+    
+    /**
+     * Método que se asegura de que ningun campo de esta vacio.
+     * @return 
+     */
     public boolean validardatosEquipos(){
         return this.vista.txtNombre.getText().length() == 0  ||
                 this.vista.txtAnio.getText().length() == 0  ||
